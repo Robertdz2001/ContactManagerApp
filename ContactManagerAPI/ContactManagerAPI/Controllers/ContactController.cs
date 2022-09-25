@@ -38,5 +38,12 @@ namespace ContactManagerAPI.Controllers
             var contact = _service.GetById(id);
             return Ok(contact);
         }
+
+        [HttpPut("/{id}")]
+        public ActionResult UpdateContact([FromRoute] int id ,[FromBody] CreateContactDto dto)
+        {
+            _service.UpdateContact(id, dto);
+            return Ok();
+        }
     }
 }

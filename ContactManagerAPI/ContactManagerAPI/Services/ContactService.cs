@@ -2,6 +2,7 @@
 using ContactManagerAPI.Entities;
 using ContactManagerAPI.Exceptions;
 using ContactManagerAPI.Models;
+using Microsoft.AspNetCore.Mvc;
 
 namespace ContactManagerAPI.Services
 {
@@ -50,7 +51,26 @@ namespace ContactManagerAPI.Services
             var contactDto = _mapper.Map<ContactDto>(contact);
             return contactDto;
         }
+       
+        public void UpdateContact(int id, CreateContactDto dto)
+        {
+            var contact = _context.Contacts.FirstOrDefault(c => c.Id == id);
+            if (contact == null)
+            {
+                throw new NotFoundException("Not Found");
+            }
 
+            contact.Name = dto.Name;
+            contact.PhotoUrl = dto.PhotoUrl;
+            contact.Mobile = dto.Mobile;
+            contact.Email = dto.Email;
+            contact.Company = dto.Company;
+            contact.Title = dto.Title;
+            contact.Group = dto.Group;
+
+            _context.SaveChanges();
+
+        }
        
 
     }
