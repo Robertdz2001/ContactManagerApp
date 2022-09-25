@@ -30,5 +30,13 @@ namespace ContactManagerAPI.Controllers
             var id = _service.CreateContact(dto);
             return Created($"/contacts/{id}",null);
         }
+
+        [HttpGet("/{id}")]
+
+        public ActionResult<ContactDto> GetById([FromRoute] int id)
+        {
+            var contact = _service.GetById(id);
+            return Ok(contact);
+        }
     }
 }

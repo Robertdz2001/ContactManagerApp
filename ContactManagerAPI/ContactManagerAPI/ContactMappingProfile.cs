@@ -10,6 +10,7 @@ namespace ContactManagerAPI
         {
             CreateMap<Contact, ContactShortDto>();
             CreateMap<CreateContactDto, Contact>();
+            CreateMap<Contact, ContactDto>();
         }
     }
 }

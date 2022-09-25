@@ -39,5 +39,19 @@ namespace ContactManagerAPI.Services
             return contact.Id;
         }
 
+        public ContactDto GetById(int id)
+        {
+            var contact = _context.Contacts.FirstOrDefault(c => c.Id == id);
+
+            if(contact==null)
+            {
+                throw new NotFoundException("Not Found");
+            }
+            var contactDto = _mapper.Map<ContactDto>(contact);
+            return contactDto;
+        }
+
+       
+
     }
 }
