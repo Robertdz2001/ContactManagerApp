@@ -8,5 +8,6 @@ namespace ContactManagerAPI.Services
         int CreateContact(CreateContactDto dto);
         ContactDto GetById(int id);
         void UpdateContact(int id, CreateContactDto dto);
+        void DeleteContact(int id);
     }
 }

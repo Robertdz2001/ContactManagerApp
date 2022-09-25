@@ -71,6 +71,17 @@ namespace ContactManagerAPI.Services
             _context.SaveChanges();
 
         }
+
+        public void DeleteContact(int id)
+        {
+            var contact = _context.Contacts.FirstOrDefault(c => c.Id == id);
+            if(contact==null)
+            {
+                throw new NotFoundException("Not Found");
+            }
+            _context.Contacts.Remove(contact);
+            _context.SaveChanges();
+        }
        
 
     }

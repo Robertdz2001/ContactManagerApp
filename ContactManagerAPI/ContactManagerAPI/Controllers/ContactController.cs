@@ -31,7 +31,7 @@ namespace ContactManagerAPI.Controllers
             return Created($"/contacts/{id}",null);
         }
 
-        [HttpGet("/{id}")]
+        [HttpGet("{id}")]
 
         public ActionResult<ContactDto> GetById([FromRoute] int id)
         {
@@ -39,10 +39,19 @@ namespace ContactManagerAPI.Controllers
             return Ok(contact);
         }
 
-        [HttpPut("/{id}")]
+        [HttpPut("{id}")]
         public ActionResult UpdateContact([FromRoute] int id ,[FromBody] CreateContactDto dto)
         {
             _service.UpdateContact(id, dto);
+            return Ok();
+        }
+
+        [HttpDelete("{id}")]
+
+        public ActionResult DeleteContact([FromRoute] int id)
+        {
+            _service.DeleteContact(id);
+
             return Ok();
         }
     }
