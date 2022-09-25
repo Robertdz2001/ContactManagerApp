@@ -23,5 +23,12 @@ namespace ContactManagerAPI.Controllers
             return Ok(contacts);
             
         }
+
+        [HttpPost]
+        public ActionResult CreateContact([FromBody] CreateContactDto dto)
+        {
+            var id = _service.CreateContact(dto);
+            return Created($"/contacts/{id}",null);
+        }
     }
 }

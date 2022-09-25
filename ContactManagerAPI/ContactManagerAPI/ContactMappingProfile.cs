@@ -9,6 +9,7 @@ namespace ContactManagerAPI
         public ContactMappingProfile()
         {
             CreateMap<Contact, ContactShortDto>();
+            CreateMap<CreateContactDto, Contact>();
         }
     }
 }

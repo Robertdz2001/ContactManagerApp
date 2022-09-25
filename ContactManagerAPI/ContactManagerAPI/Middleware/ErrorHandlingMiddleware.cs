@@ -20,6 +20,11 @@ namespace ContactManagerAPI.Middleware
                 context.Response.StatusCode = 404;
                 await context.Response.WriteAsync(NotFoundException.Message);
             }
+            catch (ConflictException ConflictException)
+            {
+                context.Response.StatusCode = 409;
+                await context.Response.WriteAsync(ConflictException.Message);
+            }
             catch (Exception e)
             {
                 _logger.LogError(e, e.Message);

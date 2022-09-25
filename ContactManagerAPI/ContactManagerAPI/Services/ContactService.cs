@@ -23,9 +23,20 @@ namespace ContactManagerAPI.Services
             {
                 throw new NotFoundException("Not Found");
             }
-
             var contactsShort = _mapper.Map<List<ContactShortDto>>(contacts);
             return contactsShort;
+        }
+        public int CreateContact(CreateContactDto dto)
+        {
+            var contact = _mapper.Map<Contact>(dto);
+
+            if(_context.Contacts.Contains(contact))
+            {
+                throw new ConflictException("Contact already exists");
+            }
+            _context.Contacts.Add(contact);
+            _context.SaveChanges();
+            return contact.Id;
         }
 
     }
