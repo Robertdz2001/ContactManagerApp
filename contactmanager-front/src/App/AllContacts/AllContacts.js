@@ -1,7 +1,9 @@
 import React from "react";
 import "./AllContacts.css";
 import ContactList from "../ContactList/ContactList";
-
+import 'bootstrap/dist/css/bootstrap.css';
+import { PlusCircle } from 'react-bootstrap-icons';
+import SearchBar from "../SearchBar/SearchBar";
 const getAllContacts = async () => {
     const urlFetch = "https://localhost:7173/contacts";
     try {
@@ -23,28 +25,42 @@ class AllContacts extends React.Component {
         super(props);
         this.state = {
             allContacts: [{}],
+            showedContacts: [{}],
             onPageStart: true
         }
+        this.changeShowed = this.changeShowed.bind(this);
     }
 
     async getAll() {
         const all = await getAllContacts();
-        this.setState({ allContacts: all, onPageStart: false });
+        this.setState({ allContacts: all, onPageStart: false, showedContacts: all });
         console.log(this.state.allContacts);
     }
 
+    changeShowed(contacts) {
+
+        this.setState({ showedContacts: contacts });
+
+    }
 
     render() {
         { this.state.onPageStart && this.getAll() }
-
         return (
             <div>
-                <div>
-                    <button>New</button>
+
+                <div className="button">
+                    <button type="button" className="btn btn-success btn-lg">
+                        <div className="plusCircle"><PlusCircle /></div>
+                        <div className="newButton">New</div>
+                    </button>
                 </div>
 
+                <div className="SearchBar">
+                    <SearchBar changeShowed={this.changeShowed} allContacts={this.state.allContacts} />
+
+                </div>
                 <div className="contactList">
-                    <ContactList contacts={this.state.allContacts} />
+                    <ContactList contacts={this.state.showedContacts} />
                 </div>
             </div>
 

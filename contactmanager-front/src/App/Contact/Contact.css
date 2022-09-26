@@ -20,11 +20,20 @@
 .contactImg{
     display: inline-block;
     float:left;
+    position: relative;
+    top:10px;
     
 }
 img{
     border-radius: 100%;
 }
-td{
-    border: 1px solid rgb(240, 237, 237);
+table td{
+    border: 1px solid rgb(177, 174, 174);
+}
+.contactButtons{
+    display: inline-block;
+    width: 150px;
+}
+.Button{
+    margin-top: 10px;
 }
