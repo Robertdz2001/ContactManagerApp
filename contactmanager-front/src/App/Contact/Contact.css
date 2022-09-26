@@ -1,0 +1,30 @@
+.contactInfo{
+    display: inline-block;
+    font-size: 30px;
+    width: auto;
+    margin: auto 0;
+    position: relative;
+    float: left;
+    top:20px;
+}
+.contact{
+    display: inline-block;
+    width: 800px;
+   background-color: white;
+   margin: 50px;
+   height: 200px;
+   border-radius:5%;
+   
+
+}
+.contactImg{
+    display: inline-block;
+    float:left;
+    
+}
+img{
+    border-radius: 100%;
+}
+td{
+    border: 1px solid rgb(240, 237, 237);
+}

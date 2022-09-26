@@ -65,3 +65,9 @@ C:\Users\rober\Desktop\github\ContactManagerApp\ContactManagerAPI\ContactManager
 C:\Users\rober\Desktop\github\ContactManagerApp\ContactManagerAPI\ContactManagerAPI\obj\Debug\net6.0\ContactManagerAPI.genruntimeconfig.cache
 C:\Users\rober\Desktop\github\ContactManagerApp\ContactManagerAPI\ContactManagerAPI\obj\Debug\net6.0\ref\ContactManagerAPI.dll
 C:\Users\rober\Desktop\github\ContactManagerApp\ContactManagerAPI\ContactManagerAPI\bin\Debug\net6.0\nlog.config
+C:\Users\rober\Desktop\github\ContactManagerApp\ContactManagerAPI\ContactManagerAPI\bin\Debug\net6.0\System.Web.Cors.dll
+C:\Users\rober\Desktop\github\ContactManagerApp\ContactManagerAPI\ContactManagerAPI\bin\Debug\net6.0\System.Net.Http.Formatting.dll
+C:\Users\rober\Desktop\github\ContactManagerApp\ContactManagerAPI\ContactManagerAPI\bin\Debug\net6.0\System.Web.Http.dll
+C:\Users\rober\Desktop\github\ContactManagerApp\ContactManagerAPI\ContactManagerAPI\bin\Debug\net6.0\System.Web.Http.Cors.dll
+C:\Users\rober\Desktop\github\ContactManagerApp\ContactManagerAPI\ContactManagerAPI\bin\Debug\net6.0\Newtonsoft.Json.dll
+C:\Users\rober\Desktop\github\ContactManagerApp\ContactManagerAPI\ContactManagerAPI\bin\Debug\net6.0\Newtonsoft.Json.Bson.dll

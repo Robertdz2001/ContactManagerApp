@@ -1,11 +1,12 @@
 ﻿using ContactManagerAPI.Models;
 using ContactManagerAPI.Services;
 using Microsoft.AspNetCore.Mvc;
-
+using System.Web.Http.Cors;
 namespace ContactManagerAPI.Controllers
 {
     [Route("contacts")]
     [ApiController]
+    [EnableCors(origins: "http://localhost:3000/contacts", headers: "*", methods: "*")]
     public class ContactController : ControllerBase
     {
         private readonly IContactService _service;
