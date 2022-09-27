@@ -1,0 +1,14 @@
+.updateTitle{
+    color:#236ae3;
+    float: left;
+    position: relative;
+    margin-bottom: 100px;
+}
+.updateImage{
+    position: absolute;
+    right: 600px;
+    top:200px;
+}
+img{
+    border-radius: 10%;
+}

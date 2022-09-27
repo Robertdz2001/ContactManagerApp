@@ -1,15 +1,15 @@
 import logo from '../logo.svg';
 import './App.css';
-import AllContacts, { AllContactsRouter } from './AllContacts/AllContacts';
+import { AllContactsRouter } from './AllContacts/AllContacts';
 import {
   BrowserRouter as Router,
   Routes,
   Route,
   Navigate,
-  Link
 } from "react-router-dom";
-import AddContact, { AddContactRouter } from './AddContact/AddContact';
-
+import { AddContactRouter } from './AddContact/AddContact';
+import { UpdateContactRouter } from './UpdateContact/UpdateContact';
+import { ViewContactRouter } from './ViewContact/ViewContact';
 function App() {
   return (
     <div className='App'>
@@ -29,6 +29,8 @@ function App() {
             <Route path={'/'} element={<Navigate to={'/contacts'} />} />
             <Route path="/contacts" element={<AllContactsRouter />} />
             <Route path="/contacts/add" element={<AddContactRouter />} />
+            <Route path="/contacts/update/:id" element={<UpdateContactRouter />} />
+            <Route path="/contacts/:id" element={<ViewContactRouter />} />
           </Routes>
         </div>
       </Router>

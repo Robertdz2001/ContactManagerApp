@@ -11,11 +11,10 @@ class AddContact extends React.Component {
     constructor(props) {
         super(props);
         this.handleSubmit = this.handleSubmit.bind(this);
-        this.handleRedirect = this.handleRedirect.bind(this);
     }
 
     async handleSubmit(e) {
-        this.handleRedirect();
+        this.props.navigate("/contacts");
         const newContact = {
             name: e.target.name.value,
             photoUrl: e.target.photoUrl.value,
@@ -38,9 +37,6 @@ class AddContact extends React.Component {
 
     }
 
-    handleRedirect() {
-        this.props.navigate("/contacts");
-    }
 
     render() {
 

@@ -1,6 +1,6 @@
 import React from "react";
 import "./ContactList.css";
-import Contact from "../Contact/Contact";
+import Contact, { ContactRouter } from "../Contact/Contact";
 
 class ContactList extends React.Component {
     constructor(props) {
@@ -11,7 +11,7 @@ class ContactList extends React.Component {
     render() {
         return (<div className="ContactList">
             {this.props.contacts.map(contact => {
-                return <Contact contact={contact} />;
+                return <ContactRouter contact={contact} />;
             })}
         </div>);
     }

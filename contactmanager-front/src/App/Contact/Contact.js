@@ -2,7 +2,7 @@ import React from "react";
 import "./Contact.css";
 import 'bootstrap/dist/css/bootstrap.css';
 import { EyeFill, PenFill, TrashFill } from 'react-bootstrap-icons';
-import { Navigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 class Contact extends React.Component {
     constructor(props) {
         super(props);
@@ -32,14 +32,19 @@ class Contact extends React.Component {
                     </table>
                 </div>
                 <div className="contactButtons">
-                    <div className="Button"><button type="button" className="btn btn-warning btn-lg"><EyeFill /></button></div>
-                    <div className="Button"><button type="button" className="btn btn-primary btn-lg"><PenFill /></button></div>
+                    <div className="Button"><button type="button" className="btn btn-warning btn-lg" onClick={() => this.props.navigate(`/contacts/${this.props.contact.id}`)}><EyeFill /></button></div>
+                    <div className="Button"><button type="button" className="btn btn-primary btn-lg" onClick={() => this.props.navigate(`/contacts/update/${this.props.contact.id}`)}><PenFill /></button></div>
                     <div className="Button"><button type="button" className="btn btn-danger btn-lg" onClick={this.delete}><TrashFill /></button></div>
                 </div>
             </div>
         );
     }
 
+}
+
+export function ContactRouter(props) {
+    let navigate = useNavigate();
+    return (<Contact navigate={navigate} contact={props.contact} />);
 }
 
 export default Contact;
