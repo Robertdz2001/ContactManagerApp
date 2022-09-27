@@ -4,6 +4,8 @@ import ContactList from "../ContactList/ContactList";
 import 'bootstrap/dist/css/bootstrap.css';
 import { PlusCircle } from 'react-bootstrap-icons';
 import SearchBar from "../SearchBar/SearchBar";
+import { useNavigate } from "react-router-dom";
+
 const getAllContacts = async () => {
     const urlFetch = "https://localhost:7173/contacts";
     try {
@@ -17,6 +19,7 @@ const getAllContacts = async () => {
         console.log(error);
     }
 }
+
 
 
 class AllContacts extends React.Component {
@@ -43,13 +46,14 @@ class AllContacts extends React.Component {
 
     }
 
+
     render() {
         { this.state.onPageStart && this.getAll() }
         return (
             <div>
 
                 <div className="button">
-                    <button type="button" className="btn btn-success btn-lg">
+                    <button type="button" className="btn btn-success btn-lg" onClick={() => this.props.navigate("/contacts/add")}>
                         <div className="plusCircle"><PlusCircle /></div>
                         <div className="newButton">New</div>
                     </button>
@@ -68,4 +72,10 @@ class AllContacts extends React.Component {
     }
 
 }
+
+export function AllContactsRouter(props) {
+    const navigate = useNavigate();
+    return <AllContacts navigate={navigate} />
+}
+
 export default AllContacts;

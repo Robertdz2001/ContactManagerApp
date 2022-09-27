@@ -15,7 +15,7 @@ class SearchBar extends React.Component {
 
     render() {
         return (
-            <div className="searchInput"> <input type="text" placeholder="Search by Name" onChange={this.searchByName} /></div>
+            <div className="searchInput"> <input className="search" type="text" placeholder="Search by Name" onChange={this.searchByName} /></div>
         );
     }
 

@@ -21,8 +21,12 @@
 .contactList{
     display: inline-block;
 
+
 }
 .SearchBar{
     float: left;
-    margin-left: 210px;
+    width: 100%;
+    display: block;
+    position: relative;
+    right:600px;
 }

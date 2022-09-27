@@ -1,6 +1,6 @@
 import logo from '../logo.svg';
 import './App.css';
-import AllContacts from './AllContacts/AllContacts';
+import AllContacts, { AllContactsRouter } from './AllContacts/AllContacts';
 import {
   BrowserRouter as Router,
   Routes,
@@ -8,6 +8,7 @@ import {
   Navigate,
   Link
 } from "react-router-dom";
+import AddContact, { AddContactRouter } from './AddContact/AddContact';
 
 function App() {
   return (
@@ -26,7 +27,8 @@ function App() {
         <div className='Routes'>
           <Routes>
             <Route path={'/'} element={<Navigate to={'/contacts'} />} />
-            <Route path="/contacts" element={<AllContacts />} />
+            <Route path="/contacts" element={<AllContactsRouter />} />
+            <Route path="/contacts/add" element={<AddContactRouter />} />
           </Routes>
         </div>
       </Router>
